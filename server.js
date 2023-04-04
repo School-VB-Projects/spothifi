@@ -4,6 +4,10 @@ const express = require('express');
 const server = express();
 server.use(express.json());
 
+// Import routers
+const AuditorRouter = require('./app/routes/AuditorRouter');
+server.use('/', AuditorRouter);
+
 const expressSwagger = require('express-swagger-generator') (server);
 const url = `http://${process.env.HOST}:${process.env.PORT}`;
 

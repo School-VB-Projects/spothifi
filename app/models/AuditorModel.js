@@ -19,7 +19,7 @@ const AuditorSchema = new Schema({
         required: true,
         unique: true
     },
-    password: {
+    authenticationString: {
         type: String,
         required: true
     },
