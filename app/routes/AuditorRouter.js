@@ -5,7 +5,7 @@ const AuditorController = require('../controllers/AuditorController');
 const checkJwt = require('../../middlewares/checkJwt');
 
 /**
- * Signup route
+ * Registration to the application as an auditor
  * @route POST /signup
  * @summary Response with signup success
  * @group Authentication
@@ -16,7 +16,7 @@ const checkJwt = require('../../middlewares/checkJwt');
 router.post('/signup', AuditorController.signUp);
 
 /**
- * Login route
+ * Login to the application as an auditor
  * @route POST /login
  * @summary Response with login success
  * @group Authentication
@@ -27,7 +27,7 @@ router.post('/signup', AuditorController.signUp);
 router.post('/login', AuditorController.logIn);
 
 /**
- * Profile
+ * Return current auditor profile
  * @route GET /profile
  * @summary Response with profile of current user
  * @group Authentication
@@ -37,7 +37,7 @@ router.post('/login', AuditorController.logIn);
 router.get('/profile', checkJwt, AuditorController.getProfile);
 
 /**
- * Logout route
+ * Logging out of the application
  * @route POST /logout
  * @summary Response with logout success
  * @group Authentication

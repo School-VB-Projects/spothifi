@@ -6,7 +6,9 @@ server.use(express.json());
 
 // Import routers
 const AuditorRouter = require('./app/routes/AuditorRouter');
+const PlaylistRouter = require('./app/routes/PlaylistRouter');
 server.use('/', AuditorRouter);
+server.use('/', PlaylistRouter);
 
 const expressSwagger = require('express-swagger-generator') (server);
 const url = `http://${process.env.HOST}:${process.env.PORT}`;

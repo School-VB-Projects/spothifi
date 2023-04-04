@@ -30,3 +30,8 @@ Authorization: {{token}}
 POST {{address}}/logout
 Authorization: {{token}}
 
+
+### Get my playlists
+GET {{address}}/playlists
+Content-Type: application/json
+Authorization: {{token}}
