@@ -5,7 +5,7 @@ const {Schema, model} = require('../../database');
  * @typedef Album
  * @property {String} name
  * @property {Date} releaseDate
- * @property {ObjectId} artists
+ * @property {Array.<Artist>} artists
  */
 const AlbumSchema = new Schema({
     name: {

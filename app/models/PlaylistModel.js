@@ -4,8 +4,8 @@ const {Schema, model} = require('../../database');
  * Entity of playlist
  * @typedef Playlist
  * @property {String} name
- * @property {ObjectId} auditor
- * @property {ObjectId} songs
+ * @property {Auditor.model} auditor
+ * @property {Array.<Song>} songs
  */
 const PlaylistSchema = new Schema({
     name: {

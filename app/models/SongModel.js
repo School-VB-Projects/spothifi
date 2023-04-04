@@ -5,8 +5,8 @@ const {Schema, model} = require('../../database');
  * @typedef Song
  * @property {String} name
  * @property {Number} price
- * @property {ObjectId} album
- * @property {ObjectId} playlists
+ * @property {Album.model} album
+ * @property {Array.<Playlist>} playlists
  */
 const SongSchema = new Schema({
     name: {

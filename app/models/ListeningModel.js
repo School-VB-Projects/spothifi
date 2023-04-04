@@ -4,8 +4,8 @@ const {Schema, model} = require('../../database');
  * Entity of listening
  * @typedef Listening
  * @property {String} name
- * @property {ObjectId} auditor
- * @property {ObjectId} song
+ * @property {Auditor.model} auditor
+ * @property {Song.model} song
  * @property {Date} listenDate
  */
 const ListeningSchema = new Schema({
