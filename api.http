@@ -1,5 +1,5 @@
 ### Signup
-POST http://localhost:3010/signup
+POST {{address}}/signup
 Content-Type: application/json
 
 {
@@ -12,7 +12,7 @@ Content-Type: application/json
 
 
 ### Login
-POST http://localhost:3010/login
+POST {{address}}/login
 Content-Type: application/json
 
 {
@@ -22,6 +22,6 @@ Content-Type: application/json
 
 
 ### Logout
-POST http://localhost:3010/logout
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY0MmMzMjcxYWM2ZDZlZjgzYTAwMDNmZSIsIm5hbWUiOiJUZXN0IiwibWFpbCI6InRlc3QxQG1haWwuY29tIiwiYXV0aGVudGljYXRpb25TdHJpbmciOiIkMmIkMTIkTXA5TWhEL1pJMHE3S1RERDEueXR4ZUNhV2JlODRDVWh5U2FtcHN1Q0pkUlQwT0FUajVOdHUiLCJhZ2UiOjIwLCJjb3VudHJ5IjoiVVMiLCJfX3YiOjB9LCJpYXQiOjE2ODA2MTg3MTgsImV4cCI6MTY4MDYyMjMxOH0.DNLxlMJsoe3XAVdsgK5w47Kz5EZ1bKTOlz6AFqzRGWM
+POST {{address}}/logout
+Authorization: {{token}}
 
