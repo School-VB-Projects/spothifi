@@ -10,7 +10,6 @@ Content-Type: application/json
   "country": "US"
 }
 
-
 ### Login
 POST {{address}}/login
 Content-Type: application/json
@@ -19,6 +18,12 @@ Content-Type: application/json
   "mail": "test1@mail.com",
   "authenticationString": "123"
 }
+
+
+### Profile
+GET {{address}}/profile
+Content-Type: application/json
+Authorization: {{token}}
 
 
 ### Logout

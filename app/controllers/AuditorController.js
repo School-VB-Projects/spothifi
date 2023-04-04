@@ -2,6 +2,20 @@ const AuditorModel = require('../models/AuditorModel');
 const jwt = require('jsonwebtoken');
 const {hashPassword, comparePassword} = require('../../services/auth');
 
+async function getProfile(req, res) {
+    try {
+        const current_user = await AuditorModel.findOne({
+            _id: req.payload._id
+        });
+
+        return res.status(200).json(current_user);
+    } catch (error) {
+        res.status(500).json({
+            message: error.message
+        });
+    }
+}
+
 async function signUp(req, res) {
     try {
         const {name, mail, authenticationString, age, country} = req.body;
@@ -80,6 +94,7 @@ async function logOut(req, res) {
 }
 
 module.exports = {
+    getProfile,
     signUp,
     logIn,
     logOut

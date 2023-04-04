@@ -27,6 +27,16 @@ router.post('/signup', AuditorController.signUp);
 router.post('/login', AuditorController.logIn);
 
 /**
+ * Profile
+ * @route GET /profile
+ * @summary Response with profile of current user
+ * @group Authentication
+ * @return {String} 200 - Get auditor with success
+ * @returns {String} 500 - An error message
+ */
+router.get('/profile', checkJwt, AuditorController.getProfile);
+
+/**
  * Logout route
  * @route POST /logout
  * @summary Response with logout success
