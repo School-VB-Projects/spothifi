@@ -10,12 +10,13 @@ const {Schema, model} = require('../../database');
 const ArtistSchema = new Schema({
     name: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     category: {
         type: String,
         required: true,
-        enum: ["rap", "EDM", "rock", "classic", "punk", "jazz", "various", "pop", "rnb"]
+        enum: ["rap", "edm", "rock", "classic", "punk", "jazz", "various", "pop", "rnb"]
     },
     albums: [{
         type: Schema.Types.ObjectId,

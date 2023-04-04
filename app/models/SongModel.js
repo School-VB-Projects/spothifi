@@ -14,13 +14,11 @@ const SongSchema = new Schema({
         required: true
     },
     price: {
-        type: Number,
-        required: true
+        type: Number
     },
     album: {
         type: Schema.Types.ObjectId,
-        ref: 'Album',
-        required: true
+        ref: 'Album'
     },
     playlists: [{
         type: Schema.Types.ObjectId,

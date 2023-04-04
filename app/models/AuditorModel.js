@@ -5,14 +5,15 @@ const {Schema, model} = require('../../database');
  * @typedef Auditor
  * @property {String} name
  * @property {String} mail
- * @property {String} password
+ * @property {String} authenticationString
  * @property {Number} age
  * @property {String} country
  */
 const AuditorSchema = new Schema({
     name: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     mail: {
         type: String,
