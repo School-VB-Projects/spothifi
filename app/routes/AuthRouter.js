@@ -5,9 +5,9 @@ const AuditorController = require('../controllers/AuthController');
 const checkJwt = require('../../middlewares/checkJwt');
 
 /**
- * Registration to the application as an auditor
+ * Response with 'Signup success'
  * @route POST /signup
- * @summary Response with signup success
+ * @summary Registration to the application as an auditor
  * @group Authentication
  * @param {Auditor.model} object.body.required Object containing properties to insert
  * @return {String} 200 - Signup success
@@ -16,9 +16,9 @@ const checkJwt = require('../../middlewares/checkJwt');
 router.post('/signup', AuditorController.signUp);
 
 /**
- * Login to the application as an auditor
+ * Response with 'Login success'
  * @route POST /login
- * @summary Response with login success
+ * @summary Login to the application as an auditor
  * @group Authentication
  * @param {Auditor.model} object.body.required Object containing properties to insert
  * @return {String} 200 - Login success
@@ -27,9 +27,9 @@ router.post('/signup', AuditorController.signUp);
 router.post('/login', AuditorController.logIn);
 
 /**
- * Return current auditor profile
+ * Response with profile of current user
  * @route GET /profile
- * @summary Response with profile of current user
+ * @summary Return current auditor profile
  * @group Authentication
  * @return {String} 200 - Get auditor with success
  * @returns {String} 500 - An error message
@@ -37,9 +37,9 @@ router.post('/login', AuditorController.logIn);
 router.get('/profile', checkJwt, AuditorController.getProfile);
 
 /**
- * Logging out of the application
+ * Response with 'Logout success'
  * @route POST /logout
- * @summary Response with logout success
+ * @summary Logging out of the application
  * @group Authentication
  * @return {String} 200 - Logout success
  * @returns {String} 500 - An error message

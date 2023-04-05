@@ -10,6 +10,7 @@ Content-Type: application/json
   "country": "US"
 }
 
+
 ### Login
 POST {{address}}/login
 Content-Type: application/json
@@ -31,13 +32,23 @@ POST {{address}}/logout
 Authorization: {{token}}
 
 
-### Generate playlists
-POST {{address}}/generate-playlists
+### Create a playlist
+POST {{address}}/playlists/new
 Content-Type: application/json
 Authorization: {{token}}
+
+{
+  "name": "Favorites"
+}
 
 
 ### Get my playlists
 GET {{address}}/playlists
+Content-Type: application/json
+Authorization: {{token}}
+
+
+### Generate playlists
+POST {{address}}/generate-playlists
 Content-Type: application/json
 Authorization: {{token}}
