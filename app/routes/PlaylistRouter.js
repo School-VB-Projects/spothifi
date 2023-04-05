@@ -25,4 +25,15 @@ router.post('/new', checkJwt, PlaylistController.createPlaylist);
  */
 router.get('/', checkJwt, PlaylistController.getMyPlaylists);
 
+/**
+ * Response with 'Playlist updated successfully'
+ * @route PUT /playlists/:id
+ * @summary Update an existing playlist for current auditor
+ * @group Playlists
+ * @param {Playlist.model} object.body.required Object containing properties to insert
+ * @return {String} 200 - Updated with success
+ * @returns {String} 500 - An error message
+ */
+router.put('/:id', checkJwt, PlaylistController.updatePlaylist);
+
 module.exports = router;

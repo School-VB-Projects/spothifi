@@ -52,3 +52,13 @@ Authorization: {{token}}
 POST {{address}}/generate-playlists
 Content-Type: application/json
 Authorization: {{token}}
+
+
+### Update a playlist
+PUT {{address}}/playlists/{{playlistId}}
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "name": "Favorites - modified"
+}
