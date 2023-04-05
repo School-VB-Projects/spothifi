@@ -7,8 +7,10 @@ server.use(express.json());
 // Import routers
 const AuditorRouter = require('./app/routes/AuthRouter');
 const PlaylistRouter = require('./app/routes/PlaylistRouter');
+const SeedRouter = require('./app/routes/SeedRouter');
 server.use('/', AuditorRouter);
-server.use('/', PlaylistRouter);
+server.use('/playlists', PlaylistRouter);
+server.use('/', SeedRouter);
 
 const expressSwagger = require('express-swagger-generator') (server);
 const url = `http://${process.env.HOST}:${process.env.PORT}`;

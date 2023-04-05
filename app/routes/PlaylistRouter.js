@@ -12,6 +12,6 @@ const checkJwt = require('../../middlewares/checkJwt');
  * @return {String} 200 - Get playlists with success
  * @returns {String} 500 - An error message
  */
-router.get('/playlists', checkJwt, PlaylistController.getMyPlaylists);
+router.get('/', checkJwt, PlaylistController.getMyPlaylists);
 
 module.exports = router;

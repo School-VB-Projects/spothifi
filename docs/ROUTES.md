@@ -15,11 +15,11 @@ Logging out of the application
 
 # Playlists
 
-## GET /playlists
-Returns all playlists of the current auditor
-
 ## POST /playlists/new
 Create a new playlist for current auditor
+
+## GET /playlists
+Returns all playlists of the current auditor
 
 ## PUT /playlists/:id
 > **Arguments**
