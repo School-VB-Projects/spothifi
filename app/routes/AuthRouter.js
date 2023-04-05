@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const AuditorController = require('../controllers/AuditorController');
+const AuditorController = require('../controllers/AuthController');
 const checkJwt = require('../../middlewares/checkJwt');
 
 /**

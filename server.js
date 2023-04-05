@@ -5,7 +5,7 @@ const server = express();
 server.use(express.json());
 
 // Import routers
-const AuditorRouter = require('./app/routes/AuditorRouter');
+const AuditorRouter = require('./app/routes/AuthRouter');
 const PlaylistRouter = require('./app/routes/PlaylistRouter');
 server.use('/', AuditorRouter);
 server.use('/', PlaylistRouter);
