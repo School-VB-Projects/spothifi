@@ -5,8 +5,8 @@ Fake Spotify API
 - [npm](https://www.npmjs.com/)
 
 ### Links
-- [API](http://localhost:3010)
-- [Swagger](http://localhost:3010/api-docs)
+- [API](http://your_host:your_port)
+- [Swagger](http://your_host:your_port/api-docs)
 - [Documentation](docs/ROUTES.md)
 
 ## Linux
