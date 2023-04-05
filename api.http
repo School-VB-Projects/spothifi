@@ -62,3 +62,8 @@ Authorization: {{token}}
 {
   "name": "Favorites - modified"
 }
+
+### Delete a playlist
+DELETE {{address}}/playlists/{{playlistId}}
+Content-Type: application/json
+Authorization: {{token}}

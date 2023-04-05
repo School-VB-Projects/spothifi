@@ -57,8 +57,28 @@ async function updatePlaylist(req, res) {
     }
 }
 
+async function deletePlaylist(req, res) {
+    try {
+        const playlist = await PlaylistModel.findById({
+            _id: req.params.id,
+            auditor: req.payload._id
+        });
+
+        await playlist.deleteOne();
+
+        res.status(200).json({
+            message: 'Playlist deleted successfully'
+        })
+    } catch (error) {
+        res.status(500).json({
+            message: error.message
+        });
+    }
+}
+
 module.exports = {
     createPlaylist,
     getMyPlaylists,
-    updatePlaylist
+    updatePlaylist,
+    deletePlaylist
 }

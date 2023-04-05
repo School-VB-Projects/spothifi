@@ -36,4 +36,15 @@ router.get('/', checkJwt, PlaylistController.getMyPlaylists);
  */
 router.put('/:id', checkJwt, PlaylistController.updatePlaylist);
 
+/**
+ * Response with 'Playlist deleted successfully'
+ * @route DELETE /playlists/:id
+ * @summary Delete one playlist of current auditor
+ * @group Playlists
+ * @return {String} 200 - Deleted with success
+ * @returns {String} 500 - An error message
+ */
+router.delete('/:id', checkJwt, PlaylistController.deletePlaylist);
+
+
 module.exports = router;
