@@ -4,6 +4,9 @@ node_modules:
 init:
 	mongosh --eval 'use spothifi'
 
+db:
+	mongosh spothifi
+
 run: node_modules
 	npm start
 

@@ -31,6 +31,12 @@ POST {{address}}/logout
 Authorization: {{token}}
 
 
+### Generate playlists
+POST {{address}}/generate-playlists
+Content-Type: application/json
+Authorization: {{token}}
+
+
 ### Get my playlists
 GET {{address}}/playlists
 Content-Type: application/json
