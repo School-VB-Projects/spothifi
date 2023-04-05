@@ -34,5 +34,5 @@ let options = {
 expressSwagger(options)
 
 server.listen(process.env.PORT, ()=> {
-    console.log(url)
+    console.log(`${url}/api-docs`)
 })
