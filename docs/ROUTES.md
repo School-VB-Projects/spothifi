@@ -1,3 +1,8 @@
+# Seed
+
+## POST /generate-data
+Generating artists, albums and songs
+
 # Authentication
 
 ## POST /signup
@@ -42,8 +47,11 @@ Delete one playlist of current auditor
 
 Current auditor listen a song
 
-## PATCH /songs/:id/add
+## PATCH /playlists/:id/add
 > **Arguments**
 > - `id` Song ID
 
-Affect a song to one available playlist
+Affect one or more song.s to one available playlist
+
+## GET /search
+Search a song among all
