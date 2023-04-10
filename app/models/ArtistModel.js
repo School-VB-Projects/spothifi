@@ -24,6 +24,6 @@ const ArtistSchema = new Schema({
     }],
 });
 
-const Artist = model('Playlist', ArtistSchema);
+const Artist = model('Artist', ArtistSchema);
 
 module.exports = Artist;
