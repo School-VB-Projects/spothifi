@@ -1,7 +1,7 @@
 # Seed
 
 ## POST /generate-data
-Generating artists, albums and songs
+Generating artists, albums, songs and playlists
 
 # Authentication
 

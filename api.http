@@ -32,6 +32,12 @@ POST {{address}}/logout
 Authorization: {{token}}
 
 
+### Generate data
+POST {{address}}/generate-data
+Content-Type: application/json
+Authorization: {{token}}
+
+
 ### Create a playlist
 POST {{address}}/playlists/new
 Content-Type: application/json
@@ -48,12 +54,6 @@ Content-Type: application/json
 Authorization: {{token}}
 
 
-### Generate playlists
-POST {{address}}/generate-playlists
-Content-Type: application/json
-Authorization: {{token}}
-
-
 ### Update a playlist
 PUT {{address}}/playlists/{{playlistId}}
 Content-Type: application/json
@@ -62,6 +62,7 @@ Authorization: {{token}}
 {
   "name": "Favorites - modified"
 }
+
 
 ### Delete a playlist
 DELETE {{address}}/playlists/{{playlistId}}
