@@ -49,13 +49,28 @@ async function createPlaylist(req, res) {
 
 async function updatePlaylist(req, res) {
     try {
-        const {name} = req.body;
+        const {name, songs} = req.body;
         const playlist = await PlaylistModel.findById({
             _id: req.params.id,
             auditor: req.payload._id
         });
 
         playlist.name = name
+
+        if (songs) {
+            let new_songs = [];
+            for (let i = 0; i < songs.length; i++) {
+                const new_song = await SongModel.findOne({
+                    name: songs[i].name
+                });
+                if (new_song) {
+                    new_songs.push(new_song)
+                }
+            }
+            if (new_songs.length) {
+                playlist.songs = new_songs
+            }
+        }
 
         await playlist.save();
 

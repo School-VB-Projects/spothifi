@@ -69,7 +69,7 @@ Authorization: {{token}}
 }
 
 
-### Get my playlists : Copy playlist id and paste in your variables
+### Get my playlists : Copy one playlist id and paste in your variables
 GET {{address}}/playlists
 Content-Type: application/json
 Authorization: {{token}}
@@ -82,6 +82,27 @@ Authorization: {{token}}
 
 {
   "name": "Favorites - modified"
+}
+
+
+### Update a playlist and songs inside
+PUT {{address}}/playlists/{{playlistId}}
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "name": "Love - modified",
+  "songs": [
+    {
+      "name": "Powerful"
+    },
+    {
+      "name": "Sunrise in rooftop"
+    },
+    {
+      "name": "Test"
+    }
+  ]
 }
 
 
