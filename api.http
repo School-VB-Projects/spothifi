@@ -11,7 +11,7 @@ Content-Type: application/json
 }
 
 
-### Login
+### Login : Copy token and paste in your variables
 POST {{address}}/login
 Content-Type: application/json
 
@@ -48,7 +48,28 @@ Authorization: {{token}}
 }
 
 
-### Get my playlists
+### Create a playlist with songs
+POST {{address}}/playlists/new
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "name": "Love",
+  "songs": [
+    {
+      "name": "Canons"
+    },
+    {
+      "name": "Powder"
+    },
+    {
+      "name": "Test"
+    }
+  ]
+}
+
+
+### Get my playlists : Copy playlist id and paste in your variables
 GET {{address}}/playlists
 Content-Type: application/json
 Authorization: {{token}}

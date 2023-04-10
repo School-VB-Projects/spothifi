@@ -1,4 +1,5 @@
 const PlaylistModel = require('../models/PlaylistModel');
+const SongModel = require('../models/SongModel');
 
 async function getMyPlaylists(req, res) {
     try {
@@ -16,12 +17,23 @@ async function getMyPlaylists(req, res) {
 
 async function createPlaylist(req, res) {
     try {
-        const {name} = req.body;
+        const {name, songs} = req.body;
 
         const newPlaylist = new PlaylistModel({
             name,
             auditor: req.payload._id
         })
+
+        if (songs) {
+            for (let i = 0; i < songs.length; i++) {
+                const new_song = await SongModel.findOne({
+                    name: songs[i].name
+                });
+                if (new_song) {
+                    newPlaylist.songs.push(new_song)
+                }
+            }
+        }
 
         await newPlaylist.save();
 
