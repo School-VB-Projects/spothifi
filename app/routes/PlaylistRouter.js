@@ -7,7 +7,7 @@ const checkJwt = require('../../middlewares/checkJwt');
 /**
  * Response with 'Playlist created successfully'
  * @route POST /playlists/new
- * @summary Create a new playlist for current auditor
+ * @summary Create a new playlist for current auditor (requires to be connected)
  * @group Playlists
  * @param {Playlist.model} object.body.required Object containing properties to insert
  * @return {String} 200 - Created with success
@@ -18,7 +18,7 @@ router.post('/new', checkJwt, PlaylistController.createPlaylist);
 /**
  * Response with playlists of current user
  * @route GET /playlists
- * @summary Returns all playlists of the current auditor
+ * @summary Returns all playlists of the current auditor (requires to be connected)
  * @group Playlists
  * @return {String} 200 - Get playlists with success
  * @returns {String} 500 - An error message
@@ -28,7 +28,7 @@ router.get('/', checkJwt, PlaylistController.getMyPlaylists);
 /**
  * Response with 'Playlist updated successfully'
  * @route PUT /playlists/:id
- * @summary Update an existing playlist for current auditor
+ * @summary Update an existing playlist for current auditor (requires to be connected)
  * @group Playlists
  * @param {Playlist.model} object.body.required Object containing properties to insert
  * @return {String} 200 - Updated with success
@@ -39,7 +39,7 @@ router.put('/:id', checkJwt, PlaylistController.updatePlaylist);
 /**
  * Response with 'Playlist deleted successfully'
  * @route DELETE /playlists/:id
- * @summary Delete one playlist of current auditor
+ * @summary Delete one playlist of current auditor (requires to be connected)
  * @group Playlists
  * @return {String} 200 - Deleted with success
  * @returns {String} 500 - An error message

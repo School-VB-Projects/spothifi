@@ -29,7 +29,7 @@ router.post('/login', AuditorController.logIn);
 /**
  * Response with profile of current user
  * @route GET /profile
- * @summary Return current auditor profile
+ * @summary Return current auditor profile (requires to be connected)
  * @group Authentication
  * @return {String} 200 - Get auditor with success
  * @returns {String} 500 - An error message
@@ -39,7 +39,7 @@ router.get('/profile', checkJwt, AuditorController.getProfile);
 /**
  * Response with 'Logout success'
  * @route POST /logout
- * @summary Logging out of the application
+ * @summary Logging out of the application (requires to be connected)
  * @group Authentication
  * @return {String} 200 - Logout success
  * @returns {String} 500 - An error message
