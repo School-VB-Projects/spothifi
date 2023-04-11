@@ -103,9 +103,54 @@ async function deletePlaylist(req, res) {
     }
 }
 
+async function addSong(req, res) {
+    try {
+        const playlist = await PlaylistModel.findById({
+            _id: req.params.id,
+        })
+
+        if (!playlist) {
+            res.status(400).json({
+                message: "Playlist not found"
+            })
+        }
+
+        const song = await SongModel.findById({
+            _id: req.query.song
+        })
+
+        if (!song) {
+            res.status(400).json({
+                message: "Song not found"
+            })
+        }
+
+        if(playlist.songs.toString().includes(song._id)) {
+            res.status(400).json({
+                message: `${song.name} already added successfully to ${playlist.name}`
+            })
+        } else {
+            playlist.songs.push(song._id);
+            song.playlists.push(playlist._id);
+            await playlist.save();
+            await song.save();
+
+            res.status(200).json({
+                message: `${song.name} added successfully to ${playlist.name}`
+            })
+        }
+
+    } catch (error) {
+        res.status(500).json({
+            message: error.message
+        });
+    }
+}
+
 module.exports = {
     createPlaylist,
     getMyPlaylists,
     updatePlaylist,
-    deletePlaylist
+    deletePlaylist,
+    addSong
 }

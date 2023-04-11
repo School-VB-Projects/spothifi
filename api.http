@@ -116,3 +116,9 @@ Authorization: {{token}}
 POST {{address}}/listen/{{songId}}
 Content-Type: application/json
 Authorization: {{token}}
+
+
+### Affect a song
+PATCH {{address}}/playlists/{{playlistId}}/add?song={{songId}}
+Content-Type: application/json
+Authorization: {{token}}

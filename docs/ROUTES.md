@@ -62,12 +62,12 @@ Current auditor listen a song
 
 *Requires to be connected*
 
-## PATCH /playlists/:id?song
+## PATCH /playlists/:id?songs
 > **Arguments**
 > - `:id` Playlist ID
 
 > **Parameters**
-> - `?song` Song ID
+> - `?songs` Songs ID
 
 Affect one or more song.s to one available playlist
 

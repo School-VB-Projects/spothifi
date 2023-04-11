@@ -16,7 +16,9 @@ async function listen(req, res) {
 
         await listening.save();
 
-        return res.status(200).json(`Listening song ${song.name}`);
+        res.status(200).json({
+            message: `Listening song ${song.name}`
+        })
     } catch (error) {
         res.status(500).json({
             message: error.message
