@@ -107,6 +107,7 @@ async function addSong(req, res) {
     try {
         const playlist = await PlaylistModel.findById({
             _id: req.params.id,
+            auditor: req.payload._id
         })
 
         if (!playlist) {
