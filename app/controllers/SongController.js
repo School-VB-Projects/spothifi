@@ -17,7 +17,7 @@ async function listen(req, res) {
         await listening.save();
 
         res.status(200).json({
-            message: `Listening song ${song.name}`
+            message: `Listening ${song.name}`
         })
     } catch (error) {
         res.status(500).json({
@@ -26,6 +26,22 @@ async function listen(req, res) {
     }
 }
 
+async function search(req, res) {
+    try {
+        const songs = await SongModel.find({
+            name: {
+                $regex: new RegExp(req.query.query, 'i')
+            }
+        })
+        res.status(200).json({songs})
+    } catch (error) {
+        res.status(500).json({
+            message: error.message
+        })
+    }
+}
+
 module.exports = {
-    listen
+    listen,
+    search
 }

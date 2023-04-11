@@ -122,3 +122,8 @@ Authorization: {{token}}
 PATCH {{address}}/playlists/{{playlistId}}/add?song={{songId}}
 Content-Type: application/json
 Authorization: {{token}}
+
+
+### Search a song
+GET {{address}}/search?query=rooftop
+Content-Type: application/json

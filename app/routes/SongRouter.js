@@ -14,4 +14,14 @@ const checkJwt = require('../../middlewares/checkJwt');
  */
 router.post('/listen/:id', checkJwt, SongController.listen);
 
+/**
+ * Response with songs matches with query
+ * @route GET /search
+ * @summary Search a song among all
+ * @group Specials
+ * @return {String} 200 - Search running with success
+ * @returns {String} 500 - An error message
+ */
+router.get('/search', SongController.search);
+
 module.exports = router;
