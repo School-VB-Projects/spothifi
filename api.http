@@ -69,7 +69,7 @@ Authorization: {{token}}
 }
 
 
-### Get my playlists : Copy one playlist id and paste in your variables
+### Get my playlists : Choose one playlist and copy paste her id in your variables
 GET {{address}}/playlists
 Content-Type: application/json
 Authorization: {{token}}
@@ -108,5 +108,11 @@ Authorization: {{token}}
 
 ### Delete a playlist
 DELETE {{address}}/playlists/{{playlistId}}
+Content-Type: application/json
+Authorization: {{token}}
+
+
+### Listening a song
+POST {{address}}/listen/{{songId}}
 Content-Type: application/json
 Authorization: {{token}}
