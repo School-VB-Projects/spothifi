@@ -67,7 +67,7 @@ Current auditor listen a song
 > - `:id` Playlist ID
 
 > **Parameters**
-> - `?songs` Songs ID
+> - `?song` Song ID
 
 Affect one song to one available playlist
 
@@ -76,7 +76,7 @@ Affect one song to one available playlist
 > - `:id` Playlist ID
 
 > **Parameters**
-> - `?songs` Songs ID
+> - `?song` Song ID
 
 Remove one song to one available playlist
 
