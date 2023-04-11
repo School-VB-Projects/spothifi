@@ -49,12 +49,22 @@ router.delete('/:id', checkJwt, PlaylistController.deletePlaylist);
 /**
  * Response with '{song} added successfully to {playlist}'
  * @route PATCH /playlists/:id/add?song
- * @summary Affect one or more song.s to one available playlist (requires to be connected)
+ * @summary Affect one song to one available playlist (requires to be connected)
  * @group Specials
  * @return {String} 200 - Affected with success
  * @returns {String} 500 - An error message
  */
 router.patch('/:id/add', checkJwt, PlaylistController.addSong);
+
+/**
+ * Response with '{song} removed successfully to {playlist}'
+ * @route PATCH /playlists/:id/remove?song
+ * @summary Remove one song to one available playlist (requires to be connected)
+ * @group Specials
+ * @return {String} 200 - Removed with success
+ * @returns {String} 500 - An error message
+ */
+router.patch('/:id/remove', checkJwt, PlaylistController.removeSong);
 
 
 module.exports = router;

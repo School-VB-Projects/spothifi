@@ -71,6 +71,15 @@ Current auditor listen a song
 
 Affect one song to one available playlist
 
+## PATCH /playlists/:id/remove?song
+> **Arguments**
+> - `:id` Playlist ID
+
+> **Parameters**
+> - `?songs` Songs ID
+
+Remove one song to one available playlist
+
 *Requires to be connected*
 
 ## GET /search?query
